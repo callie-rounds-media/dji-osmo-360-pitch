@@ -89,39 +89,64 @@
 
   /* ─── INTERLUDE ─── */
   .interlude {
+    padding: 100px 0;
+    background: var(--bg-warm);
+  }
+  .interlude-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
     position: relative;
-    width: 100%;
-    height: 70vh;
-    min-height: 500px;
+    min-height: 560px;
+  }
+  .interlude-photo {
+    width: 50%;
+    aspect-ratio: 4/5;
+    border-radius: 4px;
     overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-  }
-  .interlude-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('assets/portrait.jpg');
-    background-size: cover;
-    background-position: center 30%;
-  }
-  .interlude-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.1) 50%, transparent);
-  }
-  .interlude-content {
     position: relative;
-    z-index: 10;
-    padding-bottom: 72px;
-    width: 100%;
+    z-index: 1;
   }
-  .interlude-tagline {
-    font-size: clamp(24px, 3.5vw, 40px);
-    font-weight: 200;
-    color: #fff;
-    line-height: 1.25;
-    max-width: 640px;
-    letter-spacing: 0.01em;
+  .interlude-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .interlude-card {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56%;
+    background: #fff;
+    padding: 48px 56px;
+    border-radius: 4px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.04);
+    z-index: 2;
+  }
+  .interlude-quote {
+    font-size: clamp(18px, 1.6vw, 22px);
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 0;
+  }
+  .interlude-attribution {
+    margin-top: 22px;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--text-muted);
+  }
+  .interlude-handle {
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--brand-accent);
+    margin-bottom: 22px;
   }
 
   /* ─── IDEA SECTIONS ─── */
@@ -339,9 +364,19 @@
     .hero-title { font-size: clamp(28px, 7vw, 48px); }
     .section-container { padding: 0 20px; }
 
-    .interlude { height: 60vh; min-height: 380px; }
-    .interlude-content { padding-bottom: 48px; }
-    .interlude-tagline { font-size: clamp(20px, 5vw, 28px); max-width: 100%; }
+    .interlude { padding: 56px 0; }
+    .interlude-container { min-height: auto; }
+    .interlude-photo { width: 100%; }
+    .interlude-card {
+      position: relative;
+      right: auto;
+      top: auto;
+      transform: none;
+      width: calc(100% - 32px);
+      margin: -32px auto 0;
+      padding: 32px 28px;
+    }
+    .interlude-quote { font-size: 17px; line-height: 1.65; }
 
     .idea-section { padding: 56px 0; }
     .idea-title { font-size: clamp(28px, 7vw, 40px); margin-bottom: 28px; }
@@ -375,10 +410,14 @@
 
   <!-- ═══ INTERLUDE ═══ -->
   <section class="interlude">
-    <div class="interlude-bg"></div>
-    <div class="interlude-overlay"></div>
-    <div class="interlude-content section-container">
-      <p class="interlude-tagline">Cinematic adventure content from environments most cameras never reach.</p>
+    <div class="interlude-container">
+      <figure class="interlude-photo">
+        <img src="assets/portrait.jpg" alt="Callie Rounds">
+      </figure>
+      <div class="interlude-card">
+        <p class="interlude-handle">@callie.rounds</p>
+        <p class="interlude-quote">In the air, on the edge, behind the camera.</p>
+      </div>
     </div>
   </section>
 
