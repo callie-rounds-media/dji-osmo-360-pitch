@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Campaign Concepts — Callie Rounds × DJI Osmo 360</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&display=swap');
 
   :root {
     --brand-accent: #2E7D6F;
@@ -100,9 +100,9 @@
     min-height: 560px;
   }
   .interlude-photo {
-    width: 50%;
+    width: 48%;
     aspect-ratio: 4/5;
-    border-radius: 4px;
+    border-radius: 2px;
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -111,7 +111,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 62%;
     display: block;
+    transform: scale(1.22);
+    transform-origin: center 62%;
   }
   .interlude-card {
     position: absolute;
@@ -120,17 +123,34 @@
     transform: translateY(-50%);
     width: 56%;
     background: #fff;
-    padding: 48px 56px;
-    border-radius: 4px;
-    box-shadow: 0 24px 64px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.04);
+    padding: 60px 64px 56px;
+    border-radius: 2px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.03);
     z-index: 2;
   }
-  .interlude-quote {
-    font-size: clamp(18px, 1.6vw, 22px);
+  .interlude-card::before {
+    content: '\201C';
+    position: absolute;
+    top: 18px;
+    left: 48px;
+    font-family: 'Fraunces', Georgia, serif;
     font-weight: 300;
-    line-height: 1.7;
+    font-size: 96px;
+    line-height: 1;
+    color: var(--brand-accent);
+    opacity: 0.16;
+    pointer-events: none;
+  }
+  .interlude-quote {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(24px, 2.2vw, 32px);
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
     color: var(--text);
     margin: 0;
+    position: relative;
   }
   .interlude-attribution {
     margin-top: 22px;
